@@ -1,0 +1,26 @@
+{
+  "name": "Kill Evil",
+  "version": "1.0",
+  "description": "Prevent printing, selection spying, unwanted tabs, etc.",
+  "icons": {
+    "32": "evil-32.png",
+    "48": "evil-48.png",
+    "128": "evil-128.png"
+  },
+  "content_scripts": [
+    {
+      "js": [ "kill-at-start.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+    },
+    {
+      "js": [ "kill-at-end.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
