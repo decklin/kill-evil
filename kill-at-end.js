@@ -7,6 +7,7 @@ function sanitizeAll(e) {
 
 function sanitize(e) {
     e.oncontextmenu = null;
+    e.onpaste = null;
     e.onselectstart = null;
     e.onmousedown = null;
     if (e.nodeName == 'A')
