@@ -7,6 +7,8 @@
     "48": "evil-48.png",
     "128": "evil-128.png"
   },
+  "background_page": "background.html",
+  "options_page": "options.html",
   "content_scripts": [
     {
       "js": [ "kill-at-start.js" ],

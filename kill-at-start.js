@@ -6,13 +6,15 @@ function inject(func) {
 }
 
 if (document.documentElement instanceof HTMLHtmlElement) {
-    inject(function() {
-        document.getSelection = function() { }
-        window.getSelection = function() { }
-        window.print = function() { }
-        window.moveTo = function() { }
-        window.moveBy = function() { }
-        window.resizeTo = function() { }
-        window.resizeBy = function() { }
+    chrome.extension.sendRequest({url: location.href}, function() {
+        inject(function() {
+            document.getSelection = function() { };
+            window.getSelection = function() { };
+            window.print = function() { };
+            window.moveTo = function() { };
+            window.moveBy = function() { };
+            window.resizeTo = function() { };
+            window.resizeBy = function() { };
+        });
     });
 }

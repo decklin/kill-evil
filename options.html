@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kill Evil Options</title>
+  <link rel="stylesheet" href="common/options.css" />
+  <script src="common/config.js"></script>
+  <script src="options.js"></script>
+</head>
+<body onload="init();">
+  <h1>Kill Evil Options</h1>
+  <p>
+    To permit evil on particular sites, enter regular expressions
+    (one per line) here.
+  </p>
+  <textarea id="whitelist" cols="80" rows="24"></textarea>
+  <div class="actions">
+    <p>
+      <input type="button" value="Save Options" onclick="save();" />
+    </p>
+  </div>
+</body>
+</html>
