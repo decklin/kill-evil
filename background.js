@@ -3,7 +3,7 @@ config.defaults({
 });
 
 function isWhitelisted(url) {
-    config.get('whitelist').some(function(pat) {
+    return config.get('whitelist').some(function(pat) {
         return RegExp(pat).test(url);
     });
 }
