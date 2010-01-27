@@ -1,20 +1,25 @@
-function inject(func) {
+function inject(f) {
     var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.textContent = "(" + func + ")();";
+    script.textContent = "(" + f + ")();";
     document.documentElement.appendChild(script);
 }
 
+function avertEvil() {
+    inject(function() {
+        var abjure = function() { }
+        document.getSelection = abjure;
+        window.getSelection = abjure;
+        window.print = abjure;
+        window.moveTo = abjure;
+        window.moveBy = abjure;
+        window.resizeTo = abjure;
+        window.resizeBy = abjure;
+    });
+}
+
 if (document.documentElement instanceof HTMLHtmlElement) {
-    chrome.extension.sendRequest({url: location.href}, function() {
-        inject(function() {
-            document.getSelection = function() { };
-            window.getSelection = function() { };
-            window.print = function() { };
-            window.moveTo = function() { };
-            window.moveBy = function() { };
-            window.resizeTo = function() { };
-            window.resizeBy = function() { };
-        });
+    chrome.extension.sendRequest({url: location.href}, function(enabled) {
+        if (enabled)
+            avertEvil();
     });
 }

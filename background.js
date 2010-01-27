@@ -9,6 +9,5 @@ function isWhitelisted(url) {
 }
 
 chrome.extension.onRequest.addListener(function(msg, src, send) {
-    if (!isWhitelisted(msg.url))
-        send(null);
+    send(!isWhitelisted(msg.url))
 });
