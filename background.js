@@ -1,5 +1,5 @@
 config.defaults({
-    whitelist: ['^https?://chrome\\.google\\.com/extensions']
+    whitelist: []
 });
 
 function isWhitelisted(url) {
