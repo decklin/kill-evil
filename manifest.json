@@ -1,6 +1,6 @@
 {
   "name": "Kill Evil",
-  "version": "2.1",
+  "version": "2.2",
   "description": "Prevent printing, selection spying, unwanted tabs, etc.",
   "icons": {
     "32": "evil-32.png",
