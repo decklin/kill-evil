@@ -1,8 +1,10 @@
 function absolve(elt) {
     elt.oncontextmenu = null;
-    elt.onpaste = null;
     elt.onselectstart = null;
     elt.onmousedown = null;
+    elt.oncut = null;
+    elt.oncopy = null;
+    elt.onpaste = null;
     if (elt.nodeName == 'A')
         elt.removeAttribute('target');
 }
