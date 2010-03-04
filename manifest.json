@@ -13,12 +13,14 @@
     {
       "js": [ "kill-at-start.js" ],
       "matches": [ "http://*/*", "https://*/*" ],
-      "run_at": "document_start"
+      "run_at": "document_start",
+      "all_frames": true
     },
     {
       "js": [ "kill-at-end.js" ],
       "matches": [ "http://*/*", "https://*/*" ],
-      "run_at": "document_end"
+      "run_at": "document_end",
+      "all_frames": true
     }
   ],
   "permissions": [
