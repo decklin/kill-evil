@@ -6,9 +6,10 @@ function inject(f) {
 
 function avertEvil() {
     inject(function() {
+        var affect = function() { return {}; }
         var abjure = function() { }
-        document.getSelection = abjure;
-        window.getSelection = abjure;
+        document.getSelection = affect;
+        window.getSelection = affect;
         window.print = abjure;
         window.moveTo = abjure;
         window.moveBy = abjure;
