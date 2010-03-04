@@ -17,6 +17,8 @@ function absolveAll(elt) {
 }
 
 function absolveDocument() {
+    absolve(window);
+    absolve(document);
     absolveAll(document.documentElement);
     document.addEventListener('DOMNodeInserted', function(ev) {
         if (ev.srcElement.nodeType == 1)
