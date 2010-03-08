@@ -5,7 +5,7 @@ function absolve(elt) {
     elt.oncut = null;
     elt.oncopy = null;
     elt.onpaste = null;
-    if (elt.nodeName == 'A')
+    if (elt.nodeName === 'A' && window.location === top.location)
         elt.removeAttribute('target');
 }
 
