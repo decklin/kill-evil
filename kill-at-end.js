@@ -21,7 +21,7 @@ function absolveDocument() {
     absolve(document);
     absolveAll(document.documentElement);
     document.addEventListener('DOMNodeInserted', function(ev) {
-        if (ev.srcElement.nodeType == 1)
+        if (ev.srcElement.nodeType === 1)
             absolveAll(ev.srcElement);
     });
 }
